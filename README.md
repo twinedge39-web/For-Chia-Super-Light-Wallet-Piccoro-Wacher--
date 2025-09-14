@@ -52,3 +52,6 @@ Apache-2.0
 ![Wallet Piccoro Logo](./assets/OriginPiccoro_icon.png
 )
 
+## Documentation
+詳細な動作条件やセットアップ手順は [docs/README.md](./docs/README.md) を参照。
+
