@@ -1,0 +1,15 @@
+{
+  "wallet_id": 1,
+  "interval_sec": 5,
+  "notify_pending": false,
+  "smtp": {
+    "host": "smtp.gmail.com",
+    "port": 465,
+    "user": "you@example.com",
+    "pass": "APP_PASSWORD",
+    "to": "you@example.com"
+  },
+  "rpc_url": "https://127.0.0.1:9256",
+  "cert_path": "/home/you/.chia/mainnet/config/ssl/wallet/private/private_wallet.crt",
+  "key_path":  "/home/you/.chia/mainnet/config/ssl/wallet/private/private_wallet.key"
+}
