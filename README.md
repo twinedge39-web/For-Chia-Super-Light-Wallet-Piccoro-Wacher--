@@ -37,5 +37,14 @@ By keeping the tool small and focused, it stays reliable and sustainable for a s
 
 ---
 
+## Security Notice
+This project is designed to run on the same machine as a Chia full node or wallet.  
+**Do not commit or push any sensitive Chia files** such as private keys, SSL certificates, or database files.  
+
+All secrets (certificates, wallet DBs, keys) must stay outside of this repository.  
+This repository is for the **wallet monitor code only**.
+
+---
+
 ## License
 Apache-2.0
