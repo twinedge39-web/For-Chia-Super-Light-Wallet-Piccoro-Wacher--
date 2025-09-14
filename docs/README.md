@@ -49,5 +49,64 @@
 - ノード停止中は通知できないが、自動復帰時に動作再開する。
 
 ---
-[← Back to Project Top](../README.md)
 
+[← プロジェクトトップへ戻る](../README.md)
+
+---
+
+# System Requirements (Wallet Piccoro)
+
+This tool is a **super-lightweight watcher** specialized only for  
+**checking Chia wallet balance and deposit notifications**.  
+It does not include transfer functions or key operations.
+
+---
+
+## Environment Requirements
+- **OS**: Windows 10+, macOS 12+, Linux (Ubuntu 20.04+ recommended)  
+- **Runtime**:  
+  - Rust (rustup recommended)  
+  - Node.js 18+ (for Tauri GUI)  
+- **Build Environment**:  
+  - Windows: Visual Studio Build Tools, Windows 10 SDK  
+  - macOS: Xcode Command Line Tools  
+  - Linux: `build-essential libgtk-3-dev libayatana-appindicator3-dev librsvg2-dev`
+
+---
+
+## Chia Node Requirements
+- Must have **Chia wallet RPC** running locally  
+  - URL: `https://127.0.0.1:9256`  
+- Certificate files (never include in repository):  
+  - `private_wallet.crt`  
+  - `private_wallet.key`  
+- Target wallet ID (usually 1)
+
+---
+
+## Mail Notification Requirements
+- SMTP-capable mail account (e.g. Gmail/Outlook)  
+- 2FA enabled + **App Password** issued  
+- Required info: `host`, `port`, `user`, `pass`, `to`
+
+---
+
+## Recommended File Structure
+- `config.json` (excluded by `.gitignore`)  
+  - See `config.example.json` for example configuration  
+- `assets/` for logo icons  
+- `docs/` for requirements and additional documentation
+
+---
+
+## Notes
+- **Never include secret files in the repository**  
+  - Certificates, keys, wallet DBs (`*.sqlite`) must remain external  
+- This tool is **for deposit notifications only**.  
+  No transfer or key management is performed.  
+- Notifications will fail if the node is stopped,  
+  but resume automatically when restarted.
+
+---
+
+[← Back to Project Top](../README.md)
