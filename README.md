@@ -49,5 +49,6 @@ This repository is for the **wallet monitor code only**.
 ## License
 Apache-2.0
 
-![Wallet Piccoro Logo](./assets/OriginPiccoro_icon.png)
+![Wallet Piccoro Logo](.assets/OriginPiccoro_icon.png
+)
 
