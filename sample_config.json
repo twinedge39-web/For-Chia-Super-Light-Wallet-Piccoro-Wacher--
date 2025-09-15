@@ -1,0 +1,16 @@
+{
+  "wallet_id": 1,
+  "rpc_url": "https://127.0.0.1:9256",
+  "identity_p12_path": "C:/wallet-piccoro/wallet_identity.p12",
+  "identity_p12_password": "",
+  "check_interval_sec": 5,
+  "notify_pending": false,
+
+  "smtp": {
+    "host": "smtp.office365.com",
+    "port": 587,
+    "user": "",
+    "pass": "",
+    "to": "abenormalize1192@outlook.jp"
+  }
+}
