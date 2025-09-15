@@ -114,7 +114,6 @@ cargo build --release
 # Operating Conditions Memo (Wallet Piccoro)
 
 A tool that monitors the Chia Wallet RPC and sends an email notification when the balance is updated.  
-Implemented in Rust + Tokio + Reqwest + Lettre.  
 This is an ultra-lightweight watcher with no sending or key management functionality.  
 
 ---
@@ -136,6 +135,9 @@ This is an ultra-lightweight watcher with no sending or key management functiona
 - Detects balance changes and sends email notifications
 - Loads certificates in `.p12` (PKCS#12) format
 - Manages settings with `config.json`
+- Supports two notification methods:
+  - **SMTP mail**
+  - **Webhook** (Google Apps Script, Discord, LINE Notify, etc.)
 
 ---
 
@@ -148,10 +150,15 @@ This is an ultra-lightweight watcher with no sending or key management functiona
 
 ---
 
-## Email Notification Requirements
+### SMTP Mail
 - SMTP-enabled email account (e.g., Gmail/Outlook)
-- 2FA enabled + **App Password** issued
-- Required information: `host`, `port`, `user`, `pass`, `to`
+- 2FA enabled + App Password (if supported)
+- Required fields: `host`, `port`, `user`, `pass`, `to`
+
+### Webhook (Recommended: GAS)
+- Deploy a Google Apps Script (or other webhook service)
+- Provide a Webhook `url`, `token`, and recipient `to` address
+- Safer than storing SMTP credentials inside the app
 
 ---
 
