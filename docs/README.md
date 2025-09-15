@@ -55,6 +55,7 @@ Rust + Tokio + Reqwest + Lettre で実装。
 ```bash
 cargo build --release
 .\target\release\wallet-piccoro.exe
+```
 
 ---
 
