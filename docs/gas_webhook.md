@@ -38,3 +38,15 @@ function doPost(e) {
   return ContentService.createTextOutput(JSON.stringify({ ok:true }))
     .setMimeType(ContentService.MimeType.JSON);
 }
+```
+## Deployment
+
+1. Open [Google Apps Script](https://script.google.com/)
+2. Create a **new project** and paste the code above into `Code.gs`
+3. Replace `your-long-secret-token` with a strong random string
+4. Save the project
+5. Go to **Deploy → New deployment → Web app**
+   - Execute as: **Me**
+   - Who has access: **Anyone**
+6. Deploy → Copy the `/exec` URL
+
