@@ -44,6 +44,8 @@ Rust + Tokio + Reqwest で実装。送金機能や鍵操作は一切含まれま
 ### Webhook (推奨: GAS)
 - Google Apps Script をデプロイして Webhook URL を発行
 - 設定項目: `url`, `token`, `to`
+- SMTP 認証情報をアプリ内に持たないので安全
+- [GAS Webhook 設定手順はこちら](docs/gas_webhook.md)
 
 ---
 
@@ -160,6 +162,7 @@ This is an ultra-lightweight watcher with no sending or key management functiona
 - Deploy a Google Apps Script (or other webhook service)
 - Provide a Webhook `url`, `token`, and recipient `to` address
 - Safer than storing SMTP credentials inside the app
+- [GAS Webhook 設定手順はこちら](docs/gas_webhook.md)
 
 ---
 
