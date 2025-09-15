@@ -1,4 +1,4 @@
-# For Chia Super Light Wallet Piccoro (READ ONLY)
+# For Chia Super Light Wallet Piccoro (Watcher)
 
 ## Purpose
 A **super-light Chia wallet monitor** designed for safety and simplicity.
