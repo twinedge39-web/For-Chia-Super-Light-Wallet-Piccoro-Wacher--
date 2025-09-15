@@ -50,3 +50,15 @@ function doPost(e) {
    - Who has access: **Anyone**
 6. Deploy → Copy the `/exec` URL
 
+
+
+## Config Example
+In `config.json`:
+
+```json
+"webhook": {
+  "url": "https://script.google.com/macros/s/XXXX/exec",
+  "token": "your-long-secret-token",
+  "to": "your@gmail.com"
+}
+```
