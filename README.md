@@ -5,17 +5,17 @@ A **super-light Chia wallet monitor** designed for safety and simplicity.
 
 - **Check balance only**  
 - **No transfer function / no key handling**  
-- **Deposit detection** → Notifications via **email** (preferred) and OS notifications  
+- **Deposit detection** → Notifications via **Webhook (recommended: GAS)** and OS notifications  
 - **Retrieve from authorized local wallets**  
 - Avoid overloading with features → keep it **light, safe, and one-person maintainable**
 
 ---
 
 ## Planned Features
+- [x] Balance check with Webhook notification
 - [ ] Balance display in system tray
-- [ ] Deposit detection with email notification
 - [ ] OS notifications for new transactions
-- [ ] Minimal settings GUI (SMTP, wallet_id, interval, etc.)
+- [ ] Minimal settings GUI (webhook, wallet_id, interval, etc.)
 - [ ] Autostart on OS login
 
 ---
@@ -30,8 +30,7 @@ By keeping the tool small and focused, it stays reliable and sustainable for a s
 ---
 
 ## Project Status
-🟢 Planning phase (design + setup)  
-⚪ Implementation (M1: Balance check + Email notification)  
+🟢 M1 complete (Balance check + Webhook notification)  
 ⚪ Next: Tray + OS notification  
 ⚪ Future: Minimal settings UI
 
