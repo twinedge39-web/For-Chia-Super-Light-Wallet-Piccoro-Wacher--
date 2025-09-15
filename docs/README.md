@@ -45,7 +45,7 @@ Rust + Tokio + Reqwest で実装。送金機能や鍵操作は一切含まれま
 - Google Apps Script をデプロイして Webhook URL を発行
 - 設定項目: `url`, `token`, `to`
 - SMTP 認証情報をアプリ内に持たないので安全
-- [GAS Webhook 設定手順はこちら](docs/gas_webhook.md)
+- [GAS Webhook 設定手順はこちら](../gas_webhook.md)
 
 ---
 
@@ -110,7 +110,7 @@ cargo build --release
 
 ---
 
-[← プロジェクトトップへ戻る](../README.md)
+[← プロジェクトトップへ戻る](docs/README.md)
 
 ---
 
