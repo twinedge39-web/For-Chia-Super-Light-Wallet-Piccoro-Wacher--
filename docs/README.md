@@ -169,6 +169,7 @@ This is an ultra-lightweight watcher with no sending or key management functiona
 - `assets/` for logo icons
 - `docs/` for this operating conditions memo and additional documents
 
+```text
 wallet-piccoro/
 ├─ src/main.rs
 ├─ Cargo.toml
@@ -177,6 +178,7 @@ wallet-piccoro/
 ├─ config.example.json # sample configuration
 ├─ assets/ # logos and icons
 └─ docs/ # this README and additional documents
+```
 
 ## Installation and Execution
 
