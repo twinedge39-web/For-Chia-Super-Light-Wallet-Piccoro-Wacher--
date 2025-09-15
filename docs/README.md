@@ -1,8 +1,7 @@
-# 動作条件メモ (Wallet Piccoro)
+# Wallet Piccoro
 
-Chia Wallet RPC を監視して、残高が更新されたらメールで通知するツール。  
-Rust + Tokio + Reqwest + Lettre で実装。  
-送金機能や鍵操作は一切含まれない、超軽量ウォッチャーです。  
+Chia Wallet RPC を監視し、残高が更新されたら通知する超軽量ウォッチャー。  
+Rust + Tokio + Reqwest で実装。送金機能や鍵操作は一切含まれません。  
 
 ---
 
@@ -19,10 +18,14 @@ Rust + Tokio + Reqwest + Lettre で実装。
 ---
 
 ## 機能
-- Chia Wallet RPC (`https://127.0.0.1:9256`) へ定期的にリクエスト
-- バランスの変化を検出してメール通知
+- Chia Wallet RPC (`https://127.0.0.1:9256`) に定期リクエスト
+- バランス変化を検出して通知
 - 証明書は `.p12` (PKCS#12) 形式で読み込み
 - 設定は `config.json` で管理
+- 通知方式は2系統：
+  - **SMTPメール**（実装未定）  
+  - **Webhook (Google Apps Script, Discord, LINE Notify など)**
+
 
 ---
 ## Chia ノード要件
@@ -33,10 +36,14 @@ Rust + Tokio + Reqwest + Lettre で実装。
 - 対象ウォレットID（通常は 1）
 ---
 
-## メール通知要件
-- SMTP対応メールアカウント（Gmail/Outlook等）
-- 2FA有効化 + **アプリパスワード**発行済み
+### SMTPメール
+- SMTP対応アカウント（例: Gmail, Outlook）
+- 推奨: 2FA有効化 + アプリパスワード  
 - 必要情報: `host`, `port`, `user`, `pass`, `to`
+
+### Webhook (推奨: GAS)
+- Google Apps Script をデプロイして Webhook URL を発行
+- 設定項目: `url`, `token`, `to`
 
 ---
 
@@ -56,6 +63,30 @@ wallet-piccoro/
 └─ docs/ # この README や追加ドキュメント
 
 ---
+
+## 設定ファイル例 (`config.json`)
+```json
+{
+  "wallet_id": 1,
+  "rpc_url": "https://127.0.0.1:9256",
+  "identity_p12_path": "wallet_identity.p12",
+  "identity_p12_password": "",
+  "check_interval_sec": 60,
+  "notify_pending": true,
+  "smtp": {
+    "host": "smtp.gmail.com",
+    "port": 587,
+    "user": "you@gmail.com",
+    "pass": "app_password_here",
+    "to": "dest@gmail.com"
+  },
+  "webhook": {
+    "url": "https://script.google.com/macros/s/XXXX/exec",
+    "token": "your-long-secret-token",
+    "to": "dest@gmail.com"
+  }
+}
+```
 
 ## インストールと実行
 ```bash
