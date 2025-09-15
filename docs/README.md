@@ -3,13 +3,15 @@
 このツールは **Chiaウォレットの残高チェックと入金通知** のみに特化した
 超軽量ウォッチャーです。送金機能や鍵操作は一切含まれていません。
 
+Chia Wallet RPC を監視して、残高が更新されたらメールで通知するツール。  
+Rust + Tokio + Reqwest + Lettre で実装。
+
 ---
 
-## 環境要件
-- **OS**: Windows 10+, macOS 12+, Linux (Ubuntu 20.04+ 推奨)
-- **ランタイム**
-  - Rust (rustup 推奨)
-  - Node.js 18 以上（Tauri GUI用）
+## 必要環境
+- Rust (1.80+ 推奨)
+- OpenSSL (Win32/Win64 OpenSSL Light インストール済み)
+- Chia ノード (wallet RPC が有効化されていること)
 - **ビルド環境**
   - Windows: Visual Studio Build Tools, Windows 10 SDK
   - macOS: Xcode Command Line Tools
@@ -17,6 +19,13 @@
 
 ---
 
+## 機能
+- Chia Wallet RPC (`https://127.0.0.1:9256`) へ定期的にリクエスト
+- バランスの変化を検出してメール通知
+- 証明書は `.p12` (PKCS#12) で読み込み
+- 設定は `config.json`
+
+---
 ## Chiaノード要件
 - ローカルで **ChiaウォレットRPC** が動作していること  
   - URL: `https://127.0.0.1:9256`
@@ -41,6 +50,11 @@
 - `docs/` にこの動作条件メモと追加ドキュメント
 
 ---
+
+## インストールと実行
+```bash
+cargo build --release
+.\target\release\wallet-piccoro.exe
 
 ## 注意
 - **秘密ファイルは絶対にリポジトリに含めないこと**
