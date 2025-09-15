@@ -53,7 +53,7 @@ Rust + Tokio + Reqwest で実装。送金機能や鍵操作は一切含まれま
 - `assets/` にロゴアイコン
 - `docs/` にこの動作条件メモと追加ドキュメント
 
-```json
+```text
 wallet-piccoro/
 ├─ src/main.rs
 ├─ Cargo.toml
