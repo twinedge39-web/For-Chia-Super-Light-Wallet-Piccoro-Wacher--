@@ -149,12 +149,12 @@ Notes
 
 Never include secret files in the repository
 
--Certificates, keys, and wallet DB (*.sqlite) must be stored externally
--This tool is for deposit notifications only. It does not handle sending or key management.
--Notifications cannot be sent while the node is stopped, but will resume automatically once it restarts.
--If check_interval_sec is too short, RPC may reject the requests — 30 seconds or longer is recommended.
--On Windows, OpenSSL DLLs must be added to PATH (when generating composite keys).
--Since a self-signed certificate is used, danger_accept_invalid_certs(true) is enabled.
+- Certificates, keys, and wallet DB (*.sqlite) must be stored externally
+- This tool is for deposit notifications only. It does not handle sending or key management.
+- Notifications cannot be sent while the node is stopped, but will resume automatically once it restarts.
+- If check_interval_sec is too short, RPC may reject the requests — 30 seconds or longer is recommended.
+- On Windows, OpenSSL DLLs must be added to PATH (when generating composite keys).
+- Since a self-signed certificate is used, danger_accept_invalid_certs(true) is enabled.
 
 ---
 
