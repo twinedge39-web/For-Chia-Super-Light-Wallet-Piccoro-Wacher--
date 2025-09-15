@@ -39,6 +39,9 @@ function doPost(e) {
     .setMimeType(ContentService.MimeType.JSON);
 }
 ```
+
+---
+
 ## Deployment
 
 1. Open [Google Apps Script](https://script.google.com/)
@@ -62,3 +65,12 @@ In `config.json`:
   "to": "your@gmail.com"
 }
 ```
+
+---
+
+## Notes
+- The token is mandatory for basic authentication.
+- Keep SHARED_TOKEN secret (do not commit it to git).
+- Emails are sent via your Google account — quota applies (~100/day for free accounts).
+- If you need multiple recipients, extend the GAS code to split data.to by comma.
+
