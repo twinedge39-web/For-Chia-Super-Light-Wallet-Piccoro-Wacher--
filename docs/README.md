@@ -80,58 +80,81 @@ cargo build --release
 
 ---
 
-# System Requirements (Wallet Piccoro)
+# Operating Conditions Memo (Wallet Piccoro)
 
-This tool is a **super-lightweight watcher** specialized only for  
-**checking Chia wallet balance and deposit notifications**.  
-It does not include transfer functions or key operations.
+A tool that monitors the Chia Wallet RPC and sends an email notification when the balance is updated.  
+Implemented in Rust + Tokio + Reqwest + Lettre.  
+This is an ultra-lightweight watcher with no sending or key management functionality.  
 
 ---
 
 ## Environment Requirements
-- **OS**: Windows 10+, macOS 12+, Linux (Ubuntu 20.04+ recommended)  
-- **Runtime**:  
-  - Rust (rustup recommended)  
-  - Node.js 18+ (for Tauri GUI)  
-- **Build Environment**:  
-  - Windows: Visual Studio Build Tools, Windows 10 SDK  
-  - macOS: Xcode Command Line Tools  
+- **OS**: Windows 10+, macOS 12+, Linux (Ubuntu 20.04+ recommended)
+- **Runtime**
+  - Rust (rustup recommended)
+  - Node.js 18 or later (for Tauri GUI)
+- **Build Environment**
+  - Windows: Visual Studio Build Tools, Windows 10 SDK
+  - macOS: Xcode Command Line Tools
   - Linux: `build-essential libgtk-3-dev libayatana-appindicator3-dev librsvg2-dev`
 
 ---
 
+## Features
+- Periodically sends requests to Chia Wallet RPC (`https://127.0.0.1:9256`)
+- Detects balance changes and sends email notifications
+- Loads certificates in `.p12` (PKCS#12) format
+- Manages settings with `config.json`
+
+---
+
 ## Chia Node Requirements
-- Must have **Chia wallet RPC** running locally  
-  - URL: `https://127.0.0.1:9256`  
-- Certificate files (never include in repository):  
-  - `private_wallet.crt`  
-  - `private_wallet.key`  
+- **Chia Wallet RPC** must be running locally  
+  - URL: `https://127.0.0.1:9256`
+- Certificate file (not included in the repository)  
+  - `.p12` file (e.g., `wallet_identity.p12`)
 - Target wallet ID (usually 1)
 
 ---
 
-## Mail Notification Requirements
-- SMTP-capable mail account (e.g. Gmail/Outlook)  
-- 2FA enabled + **App Password** issued  
-- Required info: `host`, `port`, `user`, `pass`, `to`
+## Email Notification Requirements
+- SMTP-enabled email account (e.g., Gmail/Outlook)
+- 2FA enabled + **App Password** issued
+- Required information: `host`, `port`, `user`, `pass`, `to`
 
 ---
 
 ## Recommended File Structure
-- `config.json` (excluded by `.gitignore`)  
-  - See `config.example.json` for example configuration  
-- `assets/` for logo icons  
-- `docs/` for requirements and additional documentation
+- `config.json` (ignored by .gitignore)  
+  - See `config.example.json` for sample settings
+- `assets/` for logo icons
+- `docs/` for this operating conditions memo and additional documents
 
----
+wallet-piccoro/
+├─ src/main.rs
+├─ Cargo.toml
+├─ Cargo.lock
+├─ config.json # actual configuration (ignored by .gitignore)
+├─ config.example.json # sample configuration
+├─ assets/ # logos and icons
+└─ docs/ # this README and additional documents
 
-## Notes
-- **Never include secret files in the repository**  
-  - Certificates, keys, wallet DBs (`*.sqlite`) must remain external  
-- This tool is **for deposit notifications only**.  
-  No transfer or key management is performed.  
-- Notifications will fail if the node is stopped,  
-  but resume automatically when restarted.
+## Installation and Execution
+
+```bash
+cargo build --release
+.\target\release\wallet-piccoro.exe
+```
+Notes
+
+Never include secret files in the repository
+
+-Certificates, keys, and wallet DB (*.sqlite) must be stored externally
+-This tool is for deposit notifications only. It does not handle sending or key management.
+-Notifications cannot be sent while the node is stopped, but will resume automatically once it restarts.
+-If check_interval_sec is too short, RPC may reject the requests — 30 seconds or longer is recommended.
+-On Windows, OpenSSL DLLs must be added to PATH (when generating composite keys).
+-Since a self-signed certificate is used, danger_accept_invalid_certs(true) is enabled.
 
 ---
 
