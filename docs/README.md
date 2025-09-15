@@ -137,7 +137,7 @@ This is an ultra-lightweight watcher with no sending or key management functiona
 - Loads certificates in `.p12` (PKCS#12) format
 - Manages settings with `config.json`
 - Supports two notification methods:
-  - **SMTP mail**
+  - **SMTP mail** (not yet implemented)
   - **Webhook** (Google Apps Script, Discord, LINE Notify, etc.)
 
 ---
@@ -186,7 +186,7 @@ wallet-piccoro/
 cargo build --release
 .\target\release\wallet-piccoro.exe
 ```
-Notes
+## Notes
 
 Never include secret files in the repository
 
