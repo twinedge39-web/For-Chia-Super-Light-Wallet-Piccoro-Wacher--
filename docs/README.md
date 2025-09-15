@@ -56,6 +56,8 @@ Rust + Tokio + Reqwest + Lettre で実装。
 cargo build --release
 .\target\release\wallet-piccoro.exe
 
+---
+
 ## 注意
 - **秘密ファイルは絶対にリポジトリに含めないこと**
   - 証明書、鍵、ウォレットDB (`*.sqlite`) は外部に置く
