@@ -33,3 +33,4 @@ chmod +x scripts/gen_identity_p12.sh
  - パスワードを付けたい場合はスクリプト引数で指定し、config.json の identity_p12_password も合わせて設定してください
 - Chia の RPC 証明書 (private_wallet.crt / private_wallet.key) を正しいディレクトリから指定してください
 
+
