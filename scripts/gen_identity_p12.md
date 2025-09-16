@@ -24,13 +24,14 @@ chmod +x scripts/gen_identity_p12.sh
 ## 注意点
 
 - openssl がインストールされている必要があります
- - macOS: brew install openssl
- - Ubuntu: sudo apt install openssl
- - Windows: Git Bash / WSL / OpenSSL for Windows を導入
+  - macOS: brew install openssl
+  - Ubuntu: sudo apt install openssl
+  - Windows: Git Bash / WSL / OpenSSL for Windows を導入
 - 出力される wallet_identity.p12 は 秘密情報です
- - 公開リポジトリやクラウドストレージにアップロードしないでください
+  - 公開リポジトリやクラウドストレージにアップロードしないでください
 - パスワードは既定で空です
- - パスワードを付けたい場合はスクリプト引数で指定し、config.json の identity_p12_password も合わせて設定してください
+  - パスワードを付けたい場合はスクリプト引数で指定し、config.json の identity_p12_password も合わせて設定してください
 - Chia の RPC 証明書 (private_wallet.crt / private_wallet.key) を正しいディレクトリから指定してください
+
 
 
