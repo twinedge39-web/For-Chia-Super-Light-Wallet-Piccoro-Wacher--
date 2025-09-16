@@ -1,4 +1,4 @@
-# gen_identity_p12 の使い方
+## gen_identity_p12 の使い方
 
 Wallet Piccoro が Chia Wallet RPC にアクセスするための  
 PKCS#12 (`.p12`) 証明書ファイルを生成するスクリプトです。
@@ -32,3 +32,4 @@ chmod +x scripts/gen_identity_p12.sh
 - パスワードは既定で空です
  - パスワードを付けたい場合はスクリプト引数で指定し、config.json の identity_p12_password も合わせて設定してください
 - Chia の RPC 証明書 (private_wallet.crt / private_wallet.key) を正しいディレクトリから指定してください
+
