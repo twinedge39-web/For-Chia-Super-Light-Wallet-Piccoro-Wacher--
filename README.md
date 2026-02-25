@@ -1,3 +1,14 @@
+## Status: Frozen
+
+The author does not currently use this tool in practice.
+Development is halted indefinitely.
+
+This repository remains as an architectural reference.
+
+It may be resumed if a clear practical need arises.
+
+---
+
 # For Chia Super Light Wallet Piccoro (Watcher)
 
 ## Purpose
@@ -10,6 +21,13 @@ A **super-light Chia wallet monitor** designed for safety and simplicity.
 - Avoid overloading with features → keep it **light, safe, and one-person maintainable**
 
 ---
+
+## Status: Frozen
+
+The author does not currently use this tool in practice.
+Development is halted indefinitely.
+
+This repository remains as an architectural reference.
 
 ## Planned Features
 - [x] Balance check with Webhook notification
