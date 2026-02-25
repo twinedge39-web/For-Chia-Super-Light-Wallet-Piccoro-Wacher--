@@ -22,13 +22,6 @@ A **super-light Chia wallet monitor** designed for safety and simplicity.
 
 ---
 
-## Status: Frozen
-
-The author does not currently use this tool in practice.
-Development is halted indefinitely.
-
-This repository remains as an architectural reference.
-
 ## Planned Features
 - [x] Balance check with Webhook notification
 - [ ] Balance display in system tray
